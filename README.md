@@ -82,10 +82,12 @@ Este repositorio se utilizará para publicar:
 - Guías de laboratorio y talleres.
 - Ejercicios y actividades evaluativas.
 - Recursos complementarios.
+- Ejemplo de API REST con Node.js en [ApiNodeJs](ApiNodeJs/README.md).
 
 ## Material recomendado 📚
 
 - [Guía para la elaboración de APIs REST y buenas prácticas](Guia-APIs-REST.md)
+- [Referencia breve sobre Node.js y su uso para APIs](ApiNodeJs/Nodejs-APIs.md)
 
 ## Recomendaciones para estudiantes ✅
 
