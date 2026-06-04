@@ -1,34 +1,39 @@
-# Guía para la elaboración de APIs REST y buenas prácticas
+# Guia para la elaboracion de APIs REST y buenas practicas
+
+![REST](https://img.shields.io/badge/REST-API%20Design-0A66C2)
+![HTTP](https://img.shields.io/badge/HTTP-Best%20Practices-4B5563)
+![JSON](https://img.shields.io/badge/JSON-Response%20Format-000000)
+![Academico](https://img.shields.io/badge/Contexto-Ejemplo%20Academico-1F6FEB)
 
 ## Propósito
 
-Esta guía resume criterios técnicos para diseñar, implementar y documentar APIs alineadas con el estilo REST. El objetivo no es solo exponer endpoints, sino construir interfaces consistentes, predecibles, seguras y fáciles de mantener.
+Esta guia resume criterios tecnicos para disenar, implementar y documentar APIs alineadas con el estilo REST. El objetivo no es solo exponer endpoints, sino construir interfaces consistentes, predecibles, seguras y faciles de mantener.
 
-## ¿Qué significa cumplir con REST?
+## Que significa cumplir con REST?
 
-REST es un estilo de arquitectura para sistemas distribuidos basado en recursos, una interfaz uniforme y comunicación sin estado. Una API orientada a REST debe procurar:
+REST es un estilo de arquitectura para sistemas distribuidos basado en recursos, una interfaz uniforme y comunicacion sin estado. Una API orientada a REST debe procurar:
 
 - Identificar cada recurso mediante una URL clara.
-- Usar correctamente los métodos HTTP.
+- Usar correctamente los metodos HTTP.
 - Mantener cada solicitud independiente, sin depender de estado almacenado en el servidor entre peticiones.
-- Representar recursos en formatos estándar, normalmente JSON.
-- Aprovechar los códigos de estado HTTP para comunicar el resultado de cada operación.
-- Facilitar caché, escalabilidad y evolución controlada de la interfaz.
+- Representar recursos en formatos estandar, normalmente JSON.
+- Aprovechar los codigos de estado HTTP para comunicar el resultado de cada operacion.
+- Facilitar cache, escalabilidad y evolucion controlada de la interfaz.
 
-Cumplir con REST no consiste únicamente en usar JSON y HTTP; también implica diseñar la API como una colección coherente de recursos y comportamientos.
+Cumplir con REST no consiste unicamente en usar JSON y HTTP; tambien implica disenar la API como una coleccion coherente de recursos y comportamientos.
 
 ## Restricciones REST que conviene explicitar
 
-Si se quiere hablar con mayor precisión de una API RESTful, conviene contrastarla con las restricciones clásicas de REST:
+Si se quiere hablar con mayor precision de una API RESTful, conviene contrastarla con las restricciones clasicas de REST:
 
-- Cliente-servidor: separación clara entre consumidor y proveedor del servicio.
-- Sin estado: cada petición debe ser autosuficiente.
-- Almacenable en caché: las respuestas deben indicar cuándo pueden almacenarse y reutilizarse.
-- Interfaz uniforme: recursos identificables, mensajes autodescriptivos, representaciones consistentes y semántica HTTP bien aplicada.
-- Sistema por capas: el cliente no necesita conocer si interactúa con el servicio final, un proxy o una pasarela.
-- Código bajo demanda: es opcional y poco común en APIs modernas.
+- Cliente-servidor: separacion clara entre consumidor y proveedor del servicio.
+- Sin estado: cada peticion debe ser autosuficiente.
+- Almacenable en cache: las respuestas deben indicar cuando pueden almacenarse y reutilizarse.
+- Interfaz uniforme: recursos identificables, mensajes autodescriptivos, representaciones consistentes y semantica HTTP bien aplicada.
+- Sistema por capas: el cliente no necesita conocer si interactua con el servicio final, un proxy o una pasarela.
+- Codigo bajo demanda: es opcional y poco comun en APIs modernas.
 
-En términos estrictos, una API plenamente RESTful también debería considerar hipermedia como motor del estado de la aplicación, es decir, incluir enlaces o acciones relacionadas dentro de las respuestas para guiar la navegación del cliente. En la práctica, muchas APIs académicas y empresariales siguen solo una parte de estas restricciones; en esos casos suele ser más preciso decir que son APIs HTTP inspiradas en REST o APIs con estilo REST.
+En terminos estrictos, una API plenamente RESTful tambien deberia considerar hipermedia como motor del estado de la aplicacion, es decir, incluir enlaces o acciones relacionadas dentro de las respuestas para guiar la navegacion del cliente. En la practica, muchas APIs academicas y empresariales siguen solo una parte de estas restricciones; en esos casos suele ser mas preciso decir que son APIs HTTP inspiradas en REST o APIs con estilo REST.
 
 ## Principios base de diseño
 
@@ -48,11 +53,11 @@ Evitar:
 - POST /crearUsuario
 - POST /eliminarUsuario
 
-El verbo principal ya lo aporta el método HTTP. La URL debe describir el recurso.
+El verbo principal ya lo aporta el metodo HTTP. La URL debe describir el recurso.
 
-### 2. Usar métodos HTTP de forma semántica
+### 2. Usar metodos HTTP de forma semantica
 
-Los métodos más comunes deben respetar su intención:
+Los metodos mas comunes deben respetar su intencion:
 
 - GET: consultar recursos sin modificar estado.
 - POST: crear recursos o ejecutar operaciones no idempotentes.
@@ -60,23 +65,23 @@ Los métodos más comunes deben respetar su intención:
 - PATCH: actualizar parcialmente un recurso.
 - DELETE: eliminar un recurso.
 
-Una mala práctica frecuente es usar POST para todo. Eso rompe la semántica HTTP, dificulta el uso de caché y vuelve menos clara la API.
+Una mala practica frecuente es usar POST para todo. Eso rompe la semantica HTTP, dificulta el uso de cache y vuelve menos clara la API.
 
 ### 3. Mantener ausencia de estado
 
-Cada solicitud debe contener toda la información necesaria para ser procesada. La autenticación, autorización, filtros y contexto deben viajar en la petición.
+Cada solicitud debe contener toda la informacion necesaria para ser procesada. La autenticacion, autorizacion, filtros y contexto deben viajar en la peticion.
 
-Evitar depender de sesiones implícitas del lado servidor cuando el objetivo es una API REST pública o integrable.
+Evitar depender de sesiones implicitas del lado servidor cuando el objetivo es una API REST publica o integrable.
 
-### 4. Diseñar URLs consistentes
+### 4. Disenar URLs consistentes
 
-Buenas prácticas para las rutas:
+Buenas practicas para las rutas:
 
 - Usar sustantivos en plural cuando represente colecciones: /productos, /clientes, /pedidos.
 - Mantener nombres cortos y claros.
-- Usar minúsculas y guiones si hace falta legibilidad.
+- Usar minusculas y guiones si hace falta legibilidad.
 - Evitar mezclar estilos en la misma API.
-- Reflejar jerarquías reales solo cuando exista relación fuerte entre recursos.
+- Reflejar jerarquias reales solo cuando exista relacion fuerte entre recursos.
 
 Ejemplos:
 
@@ -87,30 +92,30 @@ Ejemplos:
 
 ### 5. Representar correctamente el resultado con HTTP
 
-El resultado de una operación debe comunicarse con el código HTTP correcto, no solamente con un campo interno como success = true.
+El resultado de una operacion debe comunicarse con el codigo HTTP correcto, no solamente con un campo interno como success = true.
 
-## Códigos de estado recomendados
+## Codigos de estado recomendados
 
 ### Respuestas exitosas
 
-- 200 OK: consulta o actualización exitosa.
+- 200 OK: consulta o actualizacion exitosa.
 - 201 Created: recurso creado correctamente.
 - 202 Accepted: solicitud aceptada para procesamiento posterior.
-- 204 No Content: operación exitosa sin cuerpo de respuesta, común en DELETE o algunos PUT/PATCH.
+- 204 No Content: operacion exitosa sin cuerpo de respuesta, comun en DELETE o algunos PUT/PATCH.
 
 ### Errores del cliente
 
 - 400 Bad Request: solicitud mal construida.
-- 401 Unauthorized: falta autenticación válida.
+- 401 Unauthorized: falta autenticacion valida.
 - 403 Forbidden: autenticado, pero sin permisos suficientes.
 - 404 Not Found: recurso inexistente.
 - 409 Conflict: conflicto de estado, por ejemplo duplicidad.
-- 422 Unprocessable Entity: datos válidos en formato, pero inválidos en reglas de negocio o validación.
+- 422 Unprocessable Entity: datos validos en formato, pero invalidos en reglas de negocio o validacion.
 
 ### Errores del servidor
 
 - 500 Internal Server Error: fallo inesperado.
-- 502 Bad Gateway: respuesta inválida recibida desde un servicio externo o dependencia intermedia.
+- 502 Bad Gateway: respuesta invalida recibida desde un servicio externo o dependencia intermedia.
 - 503 Service Unavailable: servicio temporalmente no disponible.
 
 ## Convención recomendada para respuestas JSON
@@ -129,7 +134,7 @@ Una API consistente debe responder con estructuras previsibles. Por ejemplo:
 }
 ```
 
-Si se busca un diseño más estrictamente RESTful, la respuesta puede incluir enlaces relacionados para facilitar la navegación del cliente:
+Si se busca un diseño mas estrictamente RESTful, la respuesta puede incluir enlaces relacionados para facilitar la navegacion del cliente:
 
 ```json
 {
@@ -145,7 +150,7 @@ Si se busca un diseño más estrictamente RESTful, la respuesta puede incluir en
 }
 ```
 
-### Respuesta de colección con paginación
+### Respuesta de coleccion con paginacion
 
 ```json
 {
@@ -174,7 +179,7 @@ Si se busca un diseño más estrictamente RESTful, la respuesta puede incluir en
 {
   "error": {
     "code": "VALIDATION_ERROR",
-    "message": "Los datos enviados no son válidos.",
+    "message": "Los datos enviados no son validos.",
     "details": [
       {
         "field": "correo",
@@ -185,27 +190,27 @@ Si se busca un diseño más estrictamente RESTful, la respuesta puede incluir en
 }
 ```
 
-Lo importante no es una estructura única universal, sino mantener una convención estable en toda la API.
+Lo importante no es una estructura unica universal, sino mantener una convencion estable en toda la API.
 
-## Buenas prácticas clave
+## Buenas practicas clave
 
 ### Nombres claros y consistentes
 
-- Mantener el mismo criterio de nombres en rutas, atributos y parámetros.
+- Mantener el mismo criterio de nombres en rutas, atributos y parametros.
 - Evitar abreviaturas ambiguas.
-- No mezclar español e inglés sin una razón definida por el proyecto.
+- No mezclar español e ingles sin una razon definida por el proyecto.
 
-### Validación de entrada
+### Validacion de entrada
 
 Toda API debe validar:
 
 - Tipos de datos.
 - Campos requeridos.
 - Rangos permitidos.
-- Formatos, por ejemplo correo, fecha o teléfono.
-- Reglas de negocio, por ejemplo unicidad o estados válidos.
+- Formatos, por ejemplo correo, fecha o telefono.
+- Reglas de negocio, por ejemplo unicidad o estados validos.
 
-Nunca se debe confiar en que el cliente enviará información correcta.
+Nunca se debe confiar en que el cliente enviara informacion correcta.
 
 ### Manejo uniforme de errores
 
@@ -213,28 +218,28 @@ Los errores deben ser comprensibles para quien consume la API.
 
 Evitar:
 
-- Mensajes genéricos sin contexto.
-- Exponer trazas internas de la aplicación.
-- Responder siempre con 200 aunque exista error lógico.
+- Mensajes genericos sin contexto.
+- Exponer trazas internas de la aplicacion.
+- Responder siempre con 200 aunque exista error logico.
 
 Preferir:
 
-- Códigos HTTP adecuados.
+- Codigos HTTP adecuados.
 - Mensajes claros.
 - Identificadores de error reutilizables.
-- Detalles de validación por campo cuando sea necesario.
+- Detalles de validacion por campo cuando sea necesario.
 
-### Paginación, filtros y ordenamiento
+### Paginacion, filtros y ordenamiento
 
-Cuando una colección puede crecer, no conviene devolver todos los elementos de una sola vez.
+Cuando una coleccion puede crecer, no conviene devolver todos los elementos de una sola vez.
 
-Conviene soportar parámetros como:
+Conviene soportar parametros como:
 
 - page
 - pageSize
 - sort
 - order
-- filtros o campos específicos como estado, fecha, categoría
+- filtros o campos especificos como estado, fecha, categoria
 
 Ejemplo:
 
@@ -244,149 +249,17 @@ Ejemplo:
 
 Una API evoluciona. Para evitar romper clientes existentes, se recomienda versionar.
 
-Una estrategia común es incluir la versión en la ruta:
+Una estrategia comun es incluir la version en la ruta:
 
 - /api/v1/usuarios
 - /api/v2/usuarios
 
-También es válido versionar por encabezados, pero en contextos académicos y de integración básica la versión en la URL suele ser más simple de entender y mantener.
+Tambien es valido versionar por encabezados, pero en contextos academicos y de integracion basica la version en la URL suele ser mas simple de entender y mantener.
 
 ### Idempotencia cuando aplica
 
-Una operación idempotente produce el mismo resultado observable aunque se ejecute varias veces con la misma entrada.
+Una operacion idempotente produce el mismo resultado observable aunque se ejecute varias veces con la misma entrada.
 
 - GET debe ser idempotente.
-- PUT y DELETE deberían comportarse como idempotentes.
+- PUT y DELETE deberian comportarse como idempotentes.
 - POST normalmente no es idempotente.
-
-Entender esto ayuda a diseñar integraciones más robustas y reintentos seguros.
-
-### Seguridad desde el diseño
-
-Buenas prácticas mínimas:
-
-- Usar HTTPS.
-- Proteger endpoints sensibles con autenticación y autorización.
-- Validar y sanear entradas.
-- Limitar intentos o aplicar rate limiting cuando corresponda.
-- No exponer datos sensibles innecesarios.
-- Registrar eventos relevantes sin almacenar secretos en logs.
-
-### Documentación obligatoria
-
-Una API sin documentación obliga al consumidor a adivinar su comportamiento. La documentación debe incluir:
-
-- Base URL.
-- Recursos disponibles.
-- Métodos soportados.
-- Parámetros de ruta, query y body.
-- Ejemplos de solicitud y respuesta.
-- Códigos HTTP posibles.
-- Reglas de autenticación.
-- Casos de error.
-
-Cuando sea posible, usar OpenAPI o Swagger para formalizar el contrato.
-
-## Recomendaciones de estructura para endpoints
-
-### Colecciones
-
-- GET /usuarios
-- POST /usuarios
-
-### Recursos individuales
-
-- GET /usuarios/{id}
-- PUT /usuarios/{id}
-- PATCH /usuarios/{id}
-- DELETE /usuarios/{id}
-
-### Subrecursos
-
-- GET /usuarios/{id}/pedidos
-- POST /usuarios/{id}/pedidos
-
-Solo deben existir subrecursos cuando la relación tenga sentido dentro del dominio.
-
-## Errores comunes que deben evitarse
-
-- Diseñar rutas orientadas a verbos en lugar de recursos.
-- Usar POST para consultas, actualizaciones y eliminaciones sin justificación.
-- Devolver siempre 200 OK.
-- No validar datos de entrada.
-- Exponer excepciones internas al cliente.
-- No versionar la API.
-- Devolver estructuras JSON distintas para casos similares.
-- Crear endpoints demasiado acoplados al frontend actual.
-- Ignorar paginación en colecciones grandes.
-- No documentar cambios de contrato.
-
-## Checklist de calidad para una API REST
-
-Antes de publicar una API, conviene verificar:
-
-- Las rutas representan recursos del dominio.
-- Los métodos HTTP son coherentes con la operación.
-- Los códigos de estado están bien aplicados.
-- Las respuestas JSON siguen una convención uniforme.
-- Las validaciones cubren formato y reglas de negocio.
-- Los errores son claros y no exponen información sensible.
-- Existe autenticación y autorización donde corresponde.
-- La API está versionada.
-- Los endpoints de lista tienen paginación, filtros y ordenamiento cuando aplica.
-- La documentación está actualizada.
-- Hay pruebas para casos exitosos, inválidos y de error.
-
-## Ejemplo breve de diseño coherente
-
-Recurso: productos
-
-- GET /api/v1/productos
-  Lista productos con paginación y filtros.
-- GET /api/v1/productos/10
-  Obtiene el producto con id 10.
-- POST /api/v1/productos
-  Crea un nuevo producto.
-- PATCH /api/v1/productos/10
-  Actualiza parcialmente el producto.
-- DELETE /api/v1/productos/10
-  Elimina el producto.
-
-Ejemplo de creación:
-
-```http
-POST /api/v1/productos
-Content-Type: application/json
-```
-
-```json
-{
-  "nombre": "Teclado mecánico",
-  "precio": 32500,
-  "stock": 8
-}
-```
-
-Respuesta esperada:
-
-```http
-201 Created
-Location: /api/v1/productos/101
-```
-
-```json
-{
-  "data": {
-    "id": 101,
-    "nombre": "Teclado mecánico",
-    "precio": 32500,
-    "stock": 8
-  }
-}
-```
-
-## Conclusión
-
-Diseñar una API REST de calidad implica tomar decisiones consistentes sobre recursos, métodos HTTP, códigos de respuesta, validación, seguridad, documentación y evolución del contrato. Una API bien diseñada reduce errores de integración, facilita el mantenimiento y mejora la experiencia de quienes la consumen.
-
-Como criterio práctico: si una API es fácil de entender sin explicaciones verbales adicionales, devuelve respuestas predecibles y respeta la semántica HTTP, va por buen camino.

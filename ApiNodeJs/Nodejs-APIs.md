@@ -1,5 +1,10 @@
 # Node.js y su uso en APIs REST
 
+![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?logo=node.js&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-Runtime-F7DF1E?logo=javascript&logoColor=black)
+![Express](https://img.shields.io/badge/Express-APIs-000000)
+![Academico](https://img.shields.io/badge/Contexto-Ejemplo%20Academico-1F6FEB)
+
 Node.js es un entorno de ejecucion para JavaScript que permite crear aplicaciones del lado del servidor. Su principal ventaja es que usa un modelo asincrono y orientado a eventos, lo que lo hace muy util para aplicaciones que manejan muchas peticiones al mismo tiempo.
 
 ## ¿Por que se usa para crear APIs?

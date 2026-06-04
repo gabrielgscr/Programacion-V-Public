@@ -83,11 +83,15 @@ Este repositorio se utilizará para publicar:
 - Ejercicios y actividades evaluativas.
 - Recursos complementarios.
 - Ejemplo de API REST con Node.js en [ApiNodeJs](ApiNodeJs/README.md).
+- Ejemplo de API REST con .NET en [PersonasService](PersonasService/README.md).
+- Ejemplo de microservicio y cliente web en [EjemploMicroServicioPersona](EjemploMicroServicioPersona/README.md).
 
 ## Material recomendado 📚
 
 - [Guía para la elaboración de APIs REST y buenas prácticas](Guia-APIs-REST.md)
 - [Referencia breve sobre Node.js y su uso para APIs](ApiNodeJs/Nodejs-APIs.md)
+- [Referencia breve sobre .NET y su uso para APIs](PersonasService/Dotnet-APIs.md)
+- [Referencia breve sobre microservicios y consumo de APIs en .NET](EjemploMicroServicioPersona/Microservicios-APIs.md)
 
 ## Recomendaciones para estudiantes ✅
 
