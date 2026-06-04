@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonasService", "PersonasService\PersonasService.csproj", "{C3CE2860-B96D-4101-8E6E-89775C640831}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonasService.DataAccess", "PersonasService.DataAccess\PersonasService.DataAccess.csproj", "{5D34D148-7D57-44B7-B69F-2120B4DFAADC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonasService.Models", "PersonasService.Models\PersonasService.Models.csproj", "{FC1C4DD5-24AA-4D87-B76D-BE511D084F6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonaService.BusinessLogic", "PersonaService.BusinessLogic\PersonaService.BusinessLogic.csproj", "{22C4B97F-E3EA-4795-9A14-6C0D906C13FD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonaService.Abstract", "PersonaService.Abstract\PersonaService.Abstract.csproj", "{42DE0FC6-61DA-49C0-9AB8-7E3DF7A794ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{F0E3A1B0-32BA-4A90-B00E-2E77961353A1}"
+	ProjectSection(SolutionItems) = preProject
+		Creación de BD.sql = Creación de BD.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6D0CE301-E239-408A-979C-37F3DDDFAF16}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3CE2860-B96D-4101-8E6E-89775C640831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3CE2860-B96D-4101-8E6E-89775C640831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3CE2860-B96D-4101-8E6E-89775C640831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3CE2860-B96D-4101-8E6E-89775C640831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D34D148-7D57-44B7-B69F-2120B4DFAADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D34D148-7D57-44B7-B69F-2120B4DFAADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D34D148-7D57-44B7-B69F-2120B4DFAADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D34D148-7D57-44B7-B69F-2120B4DFAADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC1C4DD5-24AA-4D87-B76D-BE511D084F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1C4DD5-24AA-4D87-B76D-BE511D084F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1C4DD5-24AA-4D87-B76D-BE511D084F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1C4DD5-24AA-4D87-B76D-BE511D084F6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22C4B97F-E3EA-4795-9A14-6C0D906C13FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22C4B97F-E3EA-4795-9A14-6C0D906C13FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22C4B97F-E3EA-4795-9A14-6C0D906C13FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22C4B97F-E3EA-4795-9A14-6C0D906C13FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42DE0FC6-61DA-49C0-9AB8-7E3DF7A794ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DE0FC6-61DA-49C0-9AB8-7E3DF7A794ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DE0FC6-61DA-49C0-9AB8-7E3DF7A794ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DE0FC6-61DA-49C0-9AB8-7E3DF7A794ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E8D4DA7-259C-4D8F-84E0-29578C84CE07}
+	EndGlobalSection
+EndGlobal

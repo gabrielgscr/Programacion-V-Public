@@ -1,0 +1,10 @@
+@PersonasService_HostAddress = https://localhost:7174
+
+
+GET {{PersonasService_HostAddress}}/api/Persona/
+
+###
+
+POST {{PersonasService_HostAddress}}/api/PersonaService/
+
+###
