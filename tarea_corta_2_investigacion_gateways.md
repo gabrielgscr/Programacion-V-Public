@@ -185,5 +185,5 @@ Debe evidenciarse:
 ## Aspectos administrativos
 
 1. Debe realizarse en los equipos de trabajo definidos.
-2. Fecha de entrega: **5 de marzo de 2026**.
+2. Fecha de entrega: **18 de junio de 2026**.
 3. La valoración es individual, basada en lo indicado en el documento de responsabilidades.
