@@ -91,6 +91,8 @@ CREATE TABLE [dbo].[Persona](
 	[PersonaID] [varchar](50) NOT NULL,
 	[Nombre] [varchar](50) NOT NULL,
 	[Tipo] [tinyint] NOT NULL,
+	[Gender] [varchar](10) NOT NULL,
+	[Password] [varchar](100) NOT NULL
  CONSTRAINT [PK_Persona] PRIMARY KEY CLUSTERED 
 (
 	[PersonaID] ASC
