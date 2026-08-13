@@ -1,0 +1,4 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Permite conectar el APK de depuración al API local por HTTP. -->
+    <application android:usesCleartextTraffic="true" />
+</manifest>
