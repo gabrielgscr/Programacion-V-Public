@@ -45,7 +45,7 @@ Desarrollar una pequeña aplicación en React Native que:
 
 ## Fecha de entrega
 
-**Jueves 9 de julio de 2026**, por el CUC Virtual.
+**Jueves 16 de julio de 2026**, por el CUC Virtual.
 
 ## Entrega final
 
