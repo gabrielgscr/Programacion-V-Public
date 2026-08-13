@@ -32,6 +32,7 @@
     <string name="person_form">Información de la persona</string>
     <string name="search_id">Buscar por identificación</string>
     <string name="search">Buscar</string>
+    <string name="clear_search">Limpiar búsqueda</string>
     <string name="previous">Anterior</string>
     <string name="next">Siguiente</string>
     <string name="page_status">Página %1$d de %2$d · %3$d personas</string>

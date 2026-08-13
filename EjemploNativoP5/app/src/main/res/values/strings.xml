@@ -32,6 +32,7 @@
     <string name="person_form">Person information</string>
     <string name="search_id">Search by ID</string>
     <string name="search">Search</string>
+    <string name="clear_search">Clear search</string>
     <string name="previous">Previous</string>
     <string name="next">Next</string>
     <string name="page_status">Page %1$d of %2$d · %3$d people</string>
