@@ -11,12 +11,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("ReactDev", policy =>
+    options.AddPolicy("ClientApps", policy =>
     {
         policy
-            .WithOrigins(
-                "http://localhost:5173",
-                "https://localhost:5173")
+            .AllowAnyOrigin()
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -37,10 +35,9 @@ if (app.Environment.IsDevelopment() || app.Environment.IsStaging() || app.Enviro
 
 app.UseHttpsRedirection();
 
-// Debe estar antes de mapear endpoints para que funcione con `.RequireCors(...)`
-app.UseCors("ReactDev");
+// Debe estar antes de mapear endpoints para que funcione con `.RequireCors(...)`.
+app.UseCors("ClientApps");
 
 
 app.MapPersonaEndpoints();
 app.Run();
-

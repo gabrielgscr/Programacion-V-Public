@@ -11,7 +11,7 @@ namespace EjemploMicroServicioPersona
             var group = routes
                 .MapGroup("/api/Persona")
                 .WithTags(nameof(Persona))
-                .RequireCors("ReactDev");
+                .RequireCors("ClientApps");
 
             group.MapGet("/", async ([FromServices] IPersonaService personaService) =>
             {
