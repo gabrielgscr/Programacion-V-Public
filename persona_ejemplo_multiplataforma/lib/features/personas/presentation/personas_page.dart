@@ -48,79 +48,92 @@ class _PersonasPageState extends State<PersonasPage> {
           animation: widget.controller,
           builder: (context, _) {
             final controller = widget.controller;
-            return RefreshIndicator(
-              onRefresh: () => controller.load(page: controller.page),
-              child: CustomScrollView(
-                physics: const AlwaysScrollableScrollPhysics(),
-                slivers: [
-                  SliverToBoxAdapter(
-                    child: _Header(
-                      themeController: widget.themeController,
-                      totalCount: controller.totalCount,
+            return Stack(
+              children: [
+                RefreshIndicator(
+                  onRefresh: () => controller.load(page: controller.page),
+                  child: CustomScrollView(
+                    physics: const AlwaysScrollableScrollPhysics(),
+                    slivers: [
+                      SliverToBoxAdapter(
+                        child: _Header(
+                          themeController: widget.themeController,
+                          totalCount: controller.totalCount,
+                        ),
+                      ),
+                      SliverToBoxAdapter(
+                        child: _SearchBar(
+                          controller: _searchController,
+                          onChanged: controller.search,
+                          onClear: () {
+                            _searchController.clear();
+                            controller.search('');
+                          },
+                        ),
+                      ),
+                      if (controller.isLoading && controller.personas.isEmpty)
+                        const SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Center(child: CircularProgressIndicator()),
+                        )
+                      else if (controller.error != null &&
+                          controller.personas.isEmpty)
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: _ErrorState(
+                            message: controller.error!,
+                            onRetry: controller.load,
+                          ),
+                        )
+                      else if (controller.personas.isEmpty)
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: _EmptyState(
+                            hasQuery: controller.query.isNotEmpty,
+                          ),
+                        )
+                      else
+                        SliverPadding(
+                          padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                          sliver: SliverList.builder(
+                            itemCount: controller.personas.length,
+                            itemBuilder: (context, index) {
+                              final persona = controller.personas[index];
+                              return PersonaCard(
+                                persona: persona,
+                                onEdit: () => _openEditor(persona),
+                                confirmDelete: () => _confirmDelete(persona),
+                                onDismissed: () => _delete(persona),
+                              );
+                            },
+                          ),
+                        ),
+                      if (controller.personas.isNotEmpty)
+                        SliverToBoxAdapter(
+                          child: _Pagination(
+                            page: controller.page,
+                            totalPages: controller.totalPages,
+                            canGoBack: controller.canGoBack,
+                            canGoForward: controller.canGoForward,
+                            isLoading: controller.isLoading,
+                            onBack: () =>
+                                controller.load(page: controller.page - 1),
+                            onForward: () =>
+                                controller.load(page: controller.page + 1),
+                          ),
+                        ),
+                      const SliverToBoxAdapter(child: SizedBox(height: 96)),
+                    ],
+                  ),
+                ),
+                if (controller.isSaving)
+                  Positioned.fill(
+                    child: ColoredBox(
+                      color: Colors.black.withValues(alpha: 0.08),
+                      child: const Center(child: CircularProgressIndicator()),
                     ),
                   ),
-                  SliverToBoxAdapter(
-                    child: _SearchBar(
-                      controller: _searchController,
-                      onChanged: controller.search,
-                      onClear: () {
-                        _searchController.clear();
-                        controller.search('');
-                      },
-                    ),
-                  ),
-                  if (controller.isLoading && controller.personas.isEmpty)
-                    const SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Center(child: CircularProgressIndicator()),
-                    )
-                  else if (controller.error != null &&
-                      controller.personas.isEmpty)
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: _ErrorState(
-                        message: controller.error!,
-                        onRetry: controller.load,
-                      ),
-                    )
-                  else if (controller.personas.isEmpty)
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: _EmptyState(hasQuery: controller.query.isNotEmpty),
-                    )
-                  else
-                    SliverPadding(
-                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-                      sliver: SliverList.builder(
-                        itemCount: controller.personas.length,
-                        itemBuilder: (context, index) {
-                          final persona = controller.personas[index];
-                          return PersonaCard(
-                            persona: persona,
-                            onEdit: () => _openEditor(persona),
-                            confirmDelete: () => _confirmDelete(persona),
-                            onDismissed: () => _delete(persona),
-                          );
-                        },
-                      ),
-                    ),
-                  if (controller.personas.isNotEmpty)
-                    SliverToBoxAdapter(
-                      child: _Pagination(
-                        page: controller.page,
-                        totalPages: controller.totalPages,
-                        canGoBack: controller.canGoBack,
-                        canGoForward: controller.canGoForward,
-                        isLoading: controller.isLoading,
-                        onBack: () =>
-                            controller.load(page: controller.page - 1),
-                        onForward: () =>
-                            controller.load(page: controller.page + 1),
-                      ),
-                    ),
-                  const SliverToBoxAdapter(child: SizedBox(height: 96)),
-                ],
-              ),
+              ],
             );
           },
         ),

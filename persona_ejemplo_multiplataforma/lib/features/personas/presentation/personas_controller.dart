@@ -112,6 +112,8 @@ class PersonasController extends ChangeNotifier {
   }
 
   Future<String?> delete(Persona persona) async {
+    _isSaving = true;
+    notifyListeners();
     try {
       await _repository.delete(persona.id);
       final targetPage = _personas.length == 1 && _page > 1 ? _page - 1 : _page;
@@ -119,6 +121,9 @@ class PersonasController extends ChangeNotifier {
       return null;
     } catch (error) {
       return _messageFor(error);
+    } finally {
+      _isSaving = false;
+      notifyListeners();
     }
   }
 

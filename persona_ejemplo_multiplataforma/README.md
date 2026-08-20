@@ -16,10 +16,10 @@ edición y eliminación.
 
 ## Ejecución local
 
-1. Configura y ejecuta el microservicio con el perfil HTTP:
+1. Configura y ejecuta el microservicio con el perfil HTTPS:
 
    ```bash
-   dotnet run --project ../EjemploMicroServicioPersona/EjemploMicroServicioPersona/EjemploMicroServicioPersona.csproj --launch-profile http
+   dotnet run --project ../EjemploMicroServicioPersona/EjemploMicroServicioPersona/EjemploMicroServicioPersona.csproj --launch-profile https
    ```
 
 2. Instala las dependencias y ejecuta Flutter:
@@ -29,16 +29,32 @@ edición y eliminación.
    flutter run
    ```
 
-El valor predeterminado es `http://10.0.2.2:5200` en el emulador Android y
-`http://localhost:5200` en otros destinos. Para un dispositivo físico o un
-ambiente remoto, suministra la URL sin barra final:
+La URL base se lee desde un archivo `.env` en la raíz del proyecto. Usa
+`.env.example` como plantilla y copia su contenido a `.env` antes de ejecutar
+la app:
 
-```bash
-flutter run --dart-define=API_BASE_URL=http://192.168.1.20:5200
+```env
+API_BASE_URL=https://10.0.2.2:7231
 ```
 
-En producción utiliza HTTPS y restringe la política CORS del microservicio a
-los orígenes desplegados.
+Si no existe `.env` o la variable no está definida, la app usa estos valores
+por defecto:
+
+- `https://10.0.2.2:7231` en Android.
+- `https://localhost:7231` en Web y en el resto de plataformas.
+
+Para un dispositivo físico, cambia `API_BASE_URL` por la IP de tu equipo en la
+red local o por la URL remota del servicio, siempre sin barra final. Mantén el
+archivo `.env` fuera del control de versiones y reserva `.env.example` para la
+plantilla compartida. Swagger se encuentra en
+`https://localhost:7231/swagger/index.html`, pero el cliente consume la base
+del servicio.
+
+En modo debug, la app acepta certificados de desarrollo no confiables en
+plataformas basadas en `dart:io` para facilitar la conexión al API. En
+producción usa un certificado válido y confiable. Si trabajas con emulador o
+dispositivo físico, sigue manteniendo la política CORS del microservicio
+restringida a los orígenes desplegados.
 
 ## Calidad
 

@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import 'api_exception.dart';
@@ -11,7 +13,9 @@ class ApiClient {
     http.Client? client,
     this.timeout = const Duration(seconds: 12),
   }) : _baseUri = Uri.parse(baseUrl.replaceFirst(RegExp(r'/$'), '')),
-       _client = client ?? http.Client();
+       _client = client ?? http.Client() {
+    debugPrint('API base URI: $_baseUri');
+  }
 
   final Uri _baseUri;
   final http.Client _client;
@@ -53,6 +57,7 @@ class ApiClient {
     if (body != null) request.body = jsonEncode(body);
 
     try {
+      debugPrint('API request: $method $uri');
       final streamed = await _client.send(request).timeout(timeout);
       final response = await http.Response.fromStream(streamed);
       final decoded = _decode(response.body);
@@ -63,13 +68,31 @@ class ApiClient {
         );
       }
       return decoded;
-    } on TimeoutException {
+    } on TimeoutException catch (error) {
+      debugPrint('API timeout for $method $uri: $error');
       throw const ApiException(
         'El servicio tardó demasiado en responder. Intenta nuevamente.',
       );
-    } on http.ClientException {
+    } on SocketException catch (error) {
+      debugPrint('API connection failed for $method $uri: $error');
       throw const ApiException(
         'No fue posible conectar con el servicio. Verifica que esté activo.',
+      );
+    } on HandshakeException catch (error) {
+      debugPrint('API TLS handshake failed for $method $uri: $error');
+      throw const ApiException(
+        'No fue posible establecer una conexión segura con el servicio.',
+      );
+    } on http.ClientException catch (error) {
+      debugPrint('API client error for $method $uri: $error');
+      throw const ApiException(
+        'No fue posible conectar con el servicio. Verifica que esté activo.',
+      );
+    } catch (error, stackTrace) {
+      debugPrint('API unexpected error for $method $uri: $error');
+      debugPrintStack(stackTrace: stackTrace);
+      throw ApiException(
+        'No fue posible conectar con el servicio. Verifica la configuración.',
       );
     }
   }
