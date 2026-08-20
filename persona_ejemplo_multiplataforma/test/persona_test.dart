@@ -1,3 +1,5 @@
+// Objetivo: validar el modelo Persona y su serializacion basica.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter_test/flutter_test.dart';
 import 'package:persona_ejemplo_multiplataforma/features/personas/domain/persona.dart';
 

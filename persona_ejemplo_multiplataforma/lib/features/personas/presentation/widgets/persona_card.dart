@@ -1,3 +1,5 @@
+// Objetivo: mostrar cada persona como tarjeta interactiva con edicion y borrado.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter/material.dart';
 
 import '../../domain/persona.dart';

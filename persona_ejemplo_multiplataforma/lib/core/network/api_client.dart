@@ -1,3 +1,5 @@
+// Objetivo: ejecutar peticiones HTTP al API y normalizar errores de red y respuesta.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';

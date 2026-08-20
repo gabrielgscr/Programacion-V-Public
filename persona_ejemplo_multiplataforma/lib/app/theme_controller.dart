@@ -1,3 +1,5 @@
+// Objetivo: persistir y notificar el modo de tema seleccionado por el usuario.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

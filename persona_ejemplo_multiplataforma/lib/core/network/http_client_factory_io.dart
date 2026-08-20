@@ -1,3 +1,5 @@
+// Objetivo: crear un cliente HTTP para IO con apoyo de certificados de desarrollo.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'dart:io';
 
 import 'package:flutter/foundation.dart';

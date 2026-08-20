@@ -1,3 +1,5 @@
+// Objetivo: definir la raiz visual de la app y conectar controladores globales.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter/material.dart';
 
 import '../features/personas/presentation/personas_page.dart';

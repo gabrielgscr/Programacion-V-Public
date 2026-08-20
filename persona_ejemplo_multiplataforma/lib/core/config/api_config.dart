@@ -1,3 +1,5 @@
+// Objetivo: resolver la URL base del API segun .env y valores por defecto.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 

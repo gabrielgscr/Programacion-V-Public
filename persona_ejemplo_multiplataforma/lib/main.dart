@@ -1,3 +1,5 @@
+// Objetivo: punto de entrada de la aplicacion y composicion inicial de dependencias.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';

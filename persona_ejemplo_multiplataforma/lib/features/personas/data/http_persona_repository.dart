@@ -1,3 +1,5 @@
+// Objetivo: adaptar las operaciones HTTP del API al contrato del repositorio.
+// Preparado para el curso Programacion V CUC -Cartago
 import '../../../core/network/api_client.dart';
 import '../../../core/network/api_exception.dart';
 import '../domain/paged_personas.dart';

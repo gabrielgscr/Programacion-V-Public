@@ -1,3 +1,5 @@
+// Objetivo: coordinar estado, carga, busqueda y mutaciones de la pantalla de personas.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';

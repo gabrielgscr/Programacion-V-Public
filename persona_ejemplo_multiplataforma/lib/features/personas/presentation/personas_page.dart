@@ -1,3 +1,5 @@
+// Objetivo: construir la interfaz principal para listar, buscar y administrar personas.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'dart:async';
 
 import 'package:flutter/material.dart';

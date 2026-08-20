@@ -1,3 +1,5 @@
+// Objetivo: presentar el formulario inferior para crear y editar personas.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter/material.dart';
 
 import '../../domain/persona.dart';

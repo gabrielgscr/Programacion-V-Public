@@ -1,3 +1,5 @@
+// Objetivo: modelar y serializar los datos de una persona del sistema.
+// Preparado para el curso Programacion V CUC -Cartago
 class Persona {
   const Persona({
     required this.id,

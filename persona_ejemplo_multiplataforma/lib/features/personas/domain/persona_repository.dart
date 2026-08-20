@@ -1,3 +1,5 @@
+// Objetivo: definir el contrato de acceso a datos para personas.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'paged_personas.dart';
 import 'persona.dart';
 

@@ -1,3 +1,5 @@
+// Objetivo: centralizar los colores, temas y estilos visuales de la aplicacion.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter/material.dart';
 
 abstract final class AppColors {

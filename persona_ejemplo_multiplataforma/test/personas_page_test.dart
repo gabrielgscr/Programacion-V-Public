@@ -1,3 +1,5 @@
+// Objetivo: comprobar la interaccion visual principal de la pantalla de personas.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'package:flutter_test/flutter_test.dart';
 import 'package:persona_ejemplo_multiplataforma/app/app.dart';
 import 'package:persona_ejemplo_multiplataforma/app/theme_controller.dart';

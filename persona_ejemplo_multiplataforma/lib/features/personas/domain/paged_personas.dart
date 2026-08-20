@@ -1,3 +1,5 @@
+// Objetivo: modelar la respuesta paginada de personas devuelta por el API.
+// Preparado para el curso Programacion V CUC -Cartago
 import 'persona.dart';
 
 class PagedPersonas {
