@@ -57,7 +57,7 @@ El documento final debe incluir:
 - Conexiones entre conceptos.
 - Reflexión final del grupo, donde se mencione el impacto de la IA en el desarrollo de aplicaciones.
 
-> **Fecha de entrega**: 9/7/2026
+> **Fecha de entrega**: 22/10/2026
 
 ## Nota
 
