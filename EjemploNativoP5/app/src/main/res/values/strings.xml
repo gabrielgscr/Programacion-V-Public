@@ -1,4 +1,7 @@
 <resources>
+    <string name="local_network_permission_message">Allow access to nearby devices to connect to the service on your computer. If you previously denied access, enable the permission in Settings.</string>
+    <string name="local_network_permission_allow">Allow access</string>
+    <string name="local_network_permission_settings">Open app settings</string>
     <string name="app_name">People maintenance</string>
     <string name="people">People</string>
     <string name="add_person">Add person</string>

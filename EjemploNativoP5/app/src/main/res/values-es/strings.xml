@@ -1,4 +1,7 @@
 <resources>
+    <string name="local_network_permission_message">Permite el acceso a dispositivos cercanos para conectar con el servicio de tu computadora. Si ya denegaste el acceso, habilita el permiso en Ajustes.</string>
+    <string name="local_network_permission_allow">Permitir acceso</string>
+    <string name="local_network_permission_settings">Abrir ajustes de la app</string>
     <string name="app_name">Mantenimiento de personas</string>
     <string name="people">Personas</string>
     <string name="add_person">Agregar persona</string>
