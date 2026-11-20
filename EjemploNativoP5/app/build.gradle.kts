@@ -17,7 +17,7 @@ android {
         buildConfigField(
             "String",
             "PERSONA_API_BASE_URL",
-            "\"https://10.0.2.2:7231/\""
+            "\"https://tiusr13pl.cuc-carrera-ti.ac.cr/EjMicroservicioPersonas/\""
         )
 
     }
